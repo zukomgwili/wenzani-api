@@ -1,0 +1,86 @@
+{
+  "openapi" : "3.0.3",
+  "info" : {
+    "title" : "Wenzani",
+    "contact" : { },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost"
+  } ],
+  "paths" : {
+    "/api/tasks" : {
+      "get" : {
+        "summary" : "Get All Tasks",
+        "description" : "Get All Tasks",
+        "operationId" : "getAllTasks",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Add Task",
+        "description" : "Add Task",
+        "operationId" : "addTask",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/api_tasks_body"
+              },
+              "examples" : {
+                "Add Task" : {
+                  "value" : {
+                    "description" : "Taking the kids hiking this weekend"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    },
+    "/api/tasks/1" : {
+      "get" : {
+        "summary" : "Get Task",
+        "description" : "Get Task",
+        "operationId" : "getTask",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete Task",
+        "description" : "Delete Task",
+        "operationId" : "deleteTask",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "api_tasks_body" : {
+        "type" : "object",
+        "properties" : {
+          "description" : {
+            "type" : "string",
+            "example" : "Taking the kids hiking this weekend"
+          }
+        }
+      }
+    }
+  }
+}
